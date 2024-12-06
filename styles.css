@@ -1,9 +1,15 @@
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --background-color: #f5f6fa;
-    --text-color: #2c3e50;
-    --border-color: #dcdde1;
+    --primary-color: #14B8A6;
+    --secondary-color: #0EA5E9;
+    --background-color: #F7F7F7;
+    --text-color: #222222;
+    --border-color: #EBEBEB;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.08);
+    --shadow-md: 0 2px 4px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.08);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --spacing-unit: 8px;
 }
 
 * {
@@ -13,7 +19,7 @@
 }
 
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
@@ -22,15 +28,20 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 3);
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing-unit) * 6);
 }
 
 nav {
-    background-color: var(--primary-color);
-    padding: 1rem;
+    background-color: white;
+    padding: calc(var(--spacing-unit) * 2);
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
 }
 
 nav ul {
@@ -44,9 +55,17 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 400;
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--background-color);
+    color: var(--primary-color);
 }
 
 header {
@@ -57,53 +76,79 @@ header {
 section {
     background: white;
     border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 32px;
+    transition: box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .day-tabs {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: calc(var(--spacing-unit) * 2);
+    margin-bottom: calc(var(--spacing-unit) * 3);
+    padding-bottom: calc(var(--spacing-unit));
 }
 
 .tab-btn {
-    padding: 10px 20px;
+    padding: calc(var(--spacing-unit)) calc(var(--spacing-unit) * 2);
     border: none;
-    background: var(--background-color);
+    background: transparent;
     cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    font-weight: 500;
+    border-radius: var(--radius-sm);
+    color: #717171;
+    font-size: 14px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tab-btn:hover {
-    background: var(--secondary-color);
-    color: white;
-    opacity: 0.8;
+    background: var(--background-color);
+    color: var(--primary-color);
 }
 
 .tab-btn.active {
-    background: var(--secondary-color);
+    background: var(--primary-color);
     color: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-weight: 500;
+    box-shadow: var(--shadow-sm);
 }
 
 table {
     width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    background: white;
+    margin-bottom: 20px;
 }
 
 th, td {
-    padding: 12px;
+    padding: calc(var(--spacing-unit) * 2);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    font-size: 14px;
     text-align: left;
     border-bottom: 1px solid var(--border-color);
+    line-height: 1.6;
 }
 
 th {
-    background-color: var(--background-color);
+    background-color: #F7F7F7;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 14px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+}
+
+tr:last-child td {
+    border-bottom: none;
 }
 
 .checklist-grid {
@@ -145,6 +190,55 @@ th {
     table {
         display: block;
         overflow-x: auto;
+    }
+
+    /* 表格滚 */
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -20px;
+        padding: 0 20px;
+    }
+
+    /* 调整表格内容在移动端的显示 */
+    td {
+        min-width: 120px;
+        font-size: 0.9em;
+    }
+
+    /* 标签在移动端的显示 */
+    .tag {
+        font-size: 0.8em;
+        padding: 3px 8px;
+    }
+
+    /* 调整移动端间距 */
+    .container {
+        padding: calc(var(--spacing-unit) * 2);
+        gap: calc(var(--spacing-unit) * 4);
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    /* 改善移动端表格体验 */
+    .table-wrapper {
+        margin: 0 -20px;
+        padding: 0;
+        position: relative;
+    }
+
+    /* 添加横向滚动提示 */
+    .table-wrapper::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 30px;
+        background: linear-gradient(to right, transparent, rgba(255,255,255,0.9));
+        pointer-events: none;
     }
 }
 
@@ -208,7 +302,7 @@ th {
     margin-top: 5px;
 }
 
-/* 航班和酒店信息卡片样式 */
+/* 航班和酒店信卡片样式 */
 .travel-info {
     display: flex;
     gap: 20px;
@@ -221,16 +315,24 @@ th {
     flex: 1;
     min-width: 300px;
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
     overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.travel-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
 .travel-card-header {
-    background: var(--primary-color);
-    color: white;
+    background: var(--background-color);
+    color: var(--text-color);
     padding: 15px 20px;
     font-size: 1.2em;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .travel-card-content {
@@ -265,4 +367,377 @@ th {
     .travel-card {
         flex: 1 1 100%;
     }
-} 
+}
+
+/* 添加标签样式 */
+.tag {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0 auto;
+    text-align: center;
+    white-space: nowrap;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tag-spot {
+    background: #FFF1F2;
+    color: #BE123C;
+    border: 1px solid #FDA4AF;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.tag-spot:hover {
+    background: #FFE4E6;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(190, 18, 60, 0.1);
+}
+
+.tag-spot::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 50%);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.tag-spot:hover::after {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.tag-food {
+    background: #F0F9FF;
+    color: #0369A1;
+    border: 1px solid #BAE6FD;
+}
+
+.tag-transport {
+    background: #F5F3FF;
+    color: #5B21B6;
+    border: 1px solid #DDD6FE;
+}
+
+.spot-image {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background: white;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+}
+
+.spot-image::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.spot-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+td.has-image:hover .spot-image {
+    display: block;
+    opacity: 1;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -48%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* 添加悬浮提示 */
+td.has-image::after {
+    content: "👀";
+    margin-left: 4px;
+    font-size: 14px;
+    opacity: 0.5;
+}
+
+td.has-image:hover::after {
+    opacity: 1;
+}
+
+/* 图片来源说明 */
+.image-credit {
+    font-size: 0.8em;
+    color: #666;
+    padding: 8px 12px;
+    background: #f8f9fa;
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+/* 标签容器 */
+.tags-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 6px;
+}
+
+/* 调整表格布局 */
+table {
+    min-width: auto;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+/* 所有单元格不换行 */
+td {
+    padding: calc(var(--spacing-unit) * 2);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 调整列宽 */
+th:nth-child(1), td:nth-child(1) {
+    width: 100px;
+}
+
+th:nth-child(2), td:nth-child(2) {
+    width: 80px;
+    text-align: center;
+}
+
+th:nth-child(3), td:nth-child(3) {
+    width: 200px;
+    text-align: left;
+    padding-right: 20px;
+    white-space: nowrap;
+}
+
+th:nth-child(4), td:nth-child(4) {
+    width: 80px;
+    text-align: center;
+}
+
+th:nth-child(5), td:nth-child(5) {
+    width: 100px;
+    text-align: right;
+}
+
+th:nth-child(6), td:nth-child(6) {
+    width: 120px;
+    white-space: nowrap;
+}
+
+/* ���加标题层级样式 */
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--text-color);
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: var(--text-color);
+}
+
++ /* 隔行变色提高可读性 */
++ tr:nth-child(even) {
++     background-color: var(--background-color);
++ } 
+
+/* 添加交互动效 */
+.tab-btn, .tag, nav ul li a {
++   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+section {
++   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+section:hover {
++   transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-card:hover, .phrase-card:hover {
++   transform: translateY(-2px);
++   box-shadow: var(--shadow-md);
+}
+
+/* 添加重要信息高亮 */
+.important-info {
++   background: #F0FDFA;
++   border-left: 4px solid var(--primary-color);
++   padding: 16px;
++   margin: 16px 0;
++   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+/* 添加卡片hover效果 */
+.travel-card {
++   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.travel-card:hover {
++   transform: translateY(-2px);
++   box-shadow: var(--shadow-lg);
+}
+
+/* 强调重按钮 */
+.primary-btn {
++   background: var(--primary-color);
++   color: white;
++   padding: 12px 24px;
++   border-radius: var(--radius-sm);
++   font-weight: 500;
++   box-shadow: var(--shadow-sm);
+}
+
+/* 添加内容分组 */
+.content-group {
++   border-left: 2px solid var(--border-color);
++   padding-left: 16px;
++   margin: 24px 0;
+}
+
+/* 调整行程列的图显示 */
+td:nth-child(3) .spot-image {
+    margin-top: 12px;
+    max-width: 100%;
+}
+
+/* 移除之前的交通标签特殊样式 */
+-td .tag-transport {
+-    display: inline-block;
+-    margin: 0 4px;
+-} 
+
+/* 优化表格整体布局 */
+table {
+    min-width: auto;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+/* 调整单元格内容间 */
+td {
+    padding: calc(var(--spacing-unit) * 2);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 调整行程单元格样式 */
+td.has-image {
++   position: relative;  /* 添加相对定位 */
++   cursor: pointer;    /* 添加手型光标 */
+}
+
+/* 优化图片悬浮样式 */
+.spot-image {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background: white;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+}
+
+.spot-image::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.spot-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+td.has-image:hover .spot-image {
+    display: block;
+    opacity: 1;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -48%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* 添加悬浮提示 */
+td.has-image::after {
+    content: "👀";
+    margin-left: 4px;
+    font-size: 14px;
+    opacity: 0.5;
+}
+
+td.has-image:hover::after {
+    opacity: 1;
+}
+
+/* 移除之前可能冲突的样式 */
+-td:nth-child(3) .spot-image {
+-    margin-top: 12px;
+-    max-width: 100%;
+-}
+
+/* 优化行程内容布局 */
+td:nth-child(3) {
+    line-height: 1.5;
+    max-width: 300px;
+}

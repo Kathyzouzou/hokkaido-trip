@@ -93,6 +93,7 @@
                 <table>
                     <tr>
                         <th>时间</th>
+                        <th>类型</th>
                         <th>行程</th>
                         <th>交通方式</th>
                         <th>费用</th>
@@ -100,59 +101,23 @@
                     </tr>
                     <tr>
                         <td>15:20-15:40</td>
+                        <td>
+                            <span class="tag tag-transport">入境</span>
+                        </td>
                         <td>抵达新千岁机场，办理入境</td>
                         <td>-</td>
                         <td>-</td>
-                        <td>准备护照、��境单</td>
+                        <td>准备护照、入境单</td>
                     </tr>
                     <tr>
                         <td>15:40-16:00</td>
+                        <td>
+                            <span class="tag tag-transport">交通</span>
+                        </td>
                         <td>兑换JR PASS，取现金，购买IC卡</td>
                         <td>-</td>
                         <td>IC卡500日元/¥25</td>
                         <td>需要护照</td>
-                    </tr>
-                    <tr>
-                        <td>16:00-16:40</td>
-                        <td>前往札幌</td>
-                        <td>JR</td>
-                        <td>1150日元/¥58</td>
-                        <td>保存好车票</td>
-                    </tr>
-                    <tr>
-                        <td>16:40-17:00</td>
-                        <td>前往酒店</td>
-                        <td>步行</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>17:00-17:30</td>
-                        <td>酒店check in</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>记得拿房卡</td>
-                    </tr>
-                    <tr>
-                        <td>17:30-19:00</td>
-                        <td>狸小路商店街</td>
-                        <td>步行</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>19:00-20:00</td>
-                        <td>晚餐：札幌拉面</td>
-                        <td>-</td>
-                        <td>1000日元/¥50</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>20:00-21:00</td>
-                        <td>便利店采购次日早餐</td>
-                        <td>步行</td>
-                        <td>500日元/¥25</td>
-                        <td>-</td>
                     </tr>
                 </table>
             </div>
@@ -162,6 +127,7 @@
                 <table>
                     <tr>
                         <th>时间</th>
+                        <th>类型</th>
                         <th>行程</th>
                         <th>交通方式</th>
                         <th>费用</th>
@@ -169,6 +135,9 @@
                     </tr>
                     <tr>
                         <td>07:00-07:30</td>
+                        <td>
+                            <span class="tag tag-food">餐饮</span>
+                        </td>
                         <td>便利店早餐</td>
                         <td>-</td>
                         <td>500日元/¥25</td>
@@ -176,34 +145,67 @@
                     </tr>
                     <tr>
                         <td>08:00-09:00</td>
-                        <td>札幌小樽</td>
+                        <td>
+                            <span class="tag tag-transport">交通</span>
+                        </td>
+                        <td>札幌→小樽</td>
                         <td>JR</td>
                         <td>JR PASS</td>
                         <td>提前15分钟到站</td>
                     </tr>
                     <tr>
                         <td>09:00-11:00</td>
-                        <td>小樽动物园</td>
+                        <td>
+                            <span class="tag tag-spot">景点</span>
+                        </td>
+                        <td class="has-image">
+                            小樽动物园
+                            <div class="spot-image">
+                                <img src="images/otaru-zoo.jpg" alt="小樽动物园">
+                                <p class="image-credit">图片来源：北海道官方旅游网站</p>
+                            </div>
+                        </td>
                         <td>巴士</td>
                         <td>1000日元/¥50</td>
                         <td>11:00企鹅散步</td>
                     </tr>
                     <tr>
                         <td>11:30-13:00</td>
-                        <td>三角市场午餐</td>
+                        <td>
+                            <span class="tag tag-food">餐饮</span>
+                        </td>
+                        <td class="has-image">
+                            三角市场午餐
+                            <div class="spot-image">
+                                <img src="images/sankaku-market.jpg" alt="三角市场">
+                                <p class="image-credit">图片来源：北海道官方旅游网站</p>
+                            </div>
+                        </td>
                         <td>步行</td>
                         <td>3000日元/¥150</td>
                         <td>-</td>
                     </tr>
                     <tr>
                         <td>13:30-15:00</td>
-                        <td>小樽运河、北一硝子馆</td>
+                        <td>
+                            <span class="tag tag-spot">景点</span>
+                        </td>
+                        <td class="has-image">
+                            小樽运河、北一硝子馆
+                            <div class="spot-image">
+                                <img src="images/otaru-canal.jpg" alt="小樽运河">
+                                <p class="image-credit">图片来源：北海道官方旅游网站</p>
+                            </div>
+                        </td>
                         <td>步行</td>
                         <td>-</td>
                         <td>拍照注意防滑</td>
                     </tr>
                     <tr>
                         <td>15:30-16:30</td>
+                        <td>
+                            <span class="tag tag-spot">景点</span>
+                        </td>
                         <td>手宫公园</td>
                         <td>JR</td>
                         <td>JR PASS</td>
@@ -211,13 +213,25 @@
                     </tr>
                     <tr>
                         <td>17:00-19:00</td>
-                        <td>小樽雪灯路</td>
+                        <td>
+                            <span class="tag tag-spot">景点</span>
+                        </td>
+                        <td class="has-image">
+                            小樽雪灯路
+                            <div class="spot-image">
+                                <img src="images/otaru-light.jpg" alt="小樽雪灯路">
+                                <p class="image-credit">图片来源：北海道官方旅游网站</p>
+                            </div>
+                        </td>
                         <td>步行</td>
                         <td>-</td>
                         <td>注意保暖</td>
                     </tr>
                     <tr>
                         <td>19:30-20:30</td>
+                        <td>
+                            <span class="tag tag-transport">交通</span>
+                        </td>
                         <td>返回札幌</td>
                         <td>JR</td>
                         <td>JR PASS</td>
@@ -231,6 +245,7 @@
                 <table>
                     <tr>
                         <th>时间</th>
+                        <th>类型</th>
                         <th>行程</th>
                         <th>交通方式</th>
                         <th>费用</th>
@@ -238,6 +253,9 @@
                     </tr>
                     <tr>
                         <td>07:00-07:30</td>
+                        <td>
+                            <span class="tag tag-food">餐饮</span>
+                        </td>
                         <td>便利店早餐</td>
                         <td>-</td>
                         <td>500日元/¥25</td>
@@ -245,6 +263,9 @@
                     </tr>
                     <tr>
                         <td>08:00-10:00</td>
+                        <td>
+                            <span class="tag tag-transport">交通</span>
+                        </td>
                         <td>札幌→登别</td>
                         <td>JR</td>
                         <td>JR PASS</td>
@@ -252,13 +273,25 @@
                     </tr>
                     <tr>
                         <td>10:00-11:30</td>
-                        <td>地狱谷</td>
+                        <td>
+                            <span class="tag tag-spot">景点</span>
+                        </td>
+                        <td class="has-image">
+                            地狱谷
+                            <div class="spot-image">
+                                <img src="images/jigokudani.jpg" alt="地狱谷">
+                                <p class="image-credit">图片来源：北海道官方旅游站</p>
+                            </div>
+                        </td>
                         <td>步行</td>
                         <td>-</td>
                         <td>注意地面湿滑</td>
                     </tr>
                     <tr>
                         <td>12:00-13:00</td>
+                        <td>
+                            <span class="tag tag-food">餐饮</span>
+                        </td>
                         <td>温泉街午餐</td>
                         <td>步行</td>
                         <td>1200日元/¥60</td>
@@ -266,20 +299,41 @@
                     </tr>
                     <tr>
                         <td>13:30-15:00</td>
-                        <td>有珠山展望台</td>
+                        <td>
+                            <span class="tag tag-spot">景点</span>
+                        </td>
+                        <td class="has-image">
+                            有珠山展望台
+                            <div class="spot-image">
+                                <img src="images/usuzan.jpg" alt="有珠山展望台">
+                                <p class="image-credit">图片来源：北海道官方旅游网站</p>
+                            </div>
+                        </td>
                         <td>JR+缆车</td>
                         <td>1500日元/¥75</td>
                         <td>-</td>
                     </tr>
                     <tr>
                         <td>15:30-17:30</td>
-                        <td>登别温泉</td>
+                        <td>
+                            <span class="tag tag-spot">景点</span>
+                        </td>
+                        <td class="has-image">
+                            登别温泉
+                            <div class="spot-image">
+                                <img src="images/noboribetsu.jpg" alt="登别温泉">
+                                <p class="image-credit">图片来源：北海道官方旅游网站</p>
+                            </div>
+                        </td>
                         <td>步行</td>
                         <td>1500日元/¥75</td>
                         <td>带毛巾</td>
                     </tr>
                     <tr>
                         <td>18:00-19:30</td>
+                        <td>
+                            <span class="tag tag-transport">交通</span>
+                        </td>
                         <td>返回札幌</td>
                         <td>JR</td>
                         <td>JR PASS</td>
@@ -287,6 +341,9 @@
                     </tr>
                     <tr>
                         <td>19:30-20:30</td>
+                        <td>
+                            <span class="tag tag-food">餐饮</span>
+                        </td>
                         <td>晚餐：汤咖喱</td>
                         <td>步行</td>
                         <td>1200日元/¥60</td>
@@ -300,6 +357,7 @@
                 <table>
                     <tr>
                         <th>时间</th>
+                        <th>类型</th>
                         <th>行程</th>
                         <th>交通方式</th>
                         <th>费用</th>
@@ -307,6 +365,9 @@
                     </tr>
                     <tr>
                         <td>07:00-07:30</td>
+                        <td>
+                            <span class="tag tag-food">餐饮</span>
+                        </td>
                         <td>便利店早餐</td>
                         <td>-</td>
                         <td>500日元/¥25</td>
@@ -314,6 +375,9 @@
                     </tr>
                     <tr>
                         <td>08:00-09:30</td>
+                        <td>
+                            <span class="tag tag-transport">交通</span>
+                        </td>
                         <td>札幌→美瑛</td>
                         <td>JR</td>
                         <td>JR PASS</td>
@@ -321,13 +385,29 @@
                     </tr>
                     <tr>
                         <td>09:30-11:30</td>
-                        <td>青池、美瑛之丘</td>
+                        <td>
+                            <span class="tag tag-spot">景点</span>
+                        </td>
+                        <td class="has-image">
+                            青池、美瑛之丘
+                            <div class="spot-image">
+                                <img src="images/blue-pond.jpg" alt="青池">
+                                <p class="image-credit">图片来源：北海道官方旅游网站</p>
+                            </div>
+                            <div class="spot-image">
+                                <img src="images/biei-hill.jpg" alt="美瑛之丘">
+                                <p class="image-credit">图片来源：北海道官方旅游网站</p>
+                            </div>
+                        </td>
                         <td>巴士</td>
                         <td>500日元/¥25</td>
                         <td>-</td>
                     </tr>
                     <tr>
                         <td>12:00-13:00</td>
+                        <td>
+                            <span class="tag tag-food">餐饮</span>
+                        </td>
                         <td>美瑛车站午餐</td>
                         <td>-</td>
                         <td>1500日元/¥75</td>
@@ -335,20 +415,41 @@
                     </tr>
                     <tr>
                         <td>13:30-15:00</td>
-                        <td>富良野农场、Cheese工房</td>
+                        <td>
+                            <span class="tag tag-spot">景点</span>
+                        </td>
+                        <td class="has-image">
+                            富良野农场、Cheese工房
+                            <div class="spot-image">
+                                <img src="images/furano-farm.jpg" alt="富良野农场">
+                                <p class="image-credit">图片来源：北海道官方旅游网站</p>
+                            </div>
+                        </td>
                         <td>JR</td>
                         <td>JR PASS</td>
                         <td>-</td>
                     </tr>
                     <tr>
                         <td>15:30-17:00</td>
-                        <td>新富良野王子大饭店</td>
+                        <td>
+                            <span class="tag tag-spot">景点</span>
+                        </td>
+                        <td class="has-image">
+                            新富良野王子大饭店
+                            <div class="spot-image">
+                                <img src="images/prince-hotel.jpg" alt="新富良野王子大饭店">
+                                <p class="image-credit">图片来源：北海道官方旅游网站</p>
+                            </div>
+                        </td>
                         <td>JR</td>
                         <td>JR PASS</td>
                         <td>-</td>
                     </tr>
                     <tr>
                         <td>17:30-19:00</td>
+                        <td>
+                            <span class="tag tag-transport">交通</span>
+                        </td>
                         <td>返回札幌</td>
                         <td>JR</td>
                         <td>JR PASS</td>
@@ -356,6 +457,9 @@
                     </tr>
                     <tr>
                         <td>19:00-20:30</td>
+                        <td>
+                            <span class="tag tag-food">餐饮</span>
+                        </td>
                         <td>晚餐：成吉思汗烤肉</td>
                         <td>步行</td>
                         <td>3000日元/¥150</td>
@@ -369,13 +473,17 @@
                 <table>
                     <tr>
                         <th>时间</th>
+                        <th>类型</th>
                         <th>行程</th>
                         <th>交通方式</th>
                         <th>费用</th>
-                        <th>注意事项</th>
+                        <th>注意事</th>
                     </tr>
                     <tr>
                         <td>08:00-08:30</td>
+                        <td>
+                            <span class="tag tag-food">餐饮</span>
+                        </td>
                         <td>便利店早餐</td>
                         <td>-</td>
                         <td>500日元/¥25</td>
@@ -383,17 +491,23 @@
                     </tr>
                     <tr>
                         <td>10:30-11:30</td>
-                        <td>前往机场</td>
+                        <td>
+                            <span class="tag tag-transport">交通</span>
+                        </td>
+                        <td>往机场</td>
                         <td>JR</td>
                         <td>1150日元/¥58</td>
                         <td>-</td>
                     </tr>
                     <tr>
                         <td>11:30-13:50</td>
+                        <td>
+                            <span class="tag tag-transport">出境</span>
+                        </td>
                         <td>候机、登机</td>
                         <td>-</td>
                         <td>-</td>
-                        <td>-</td>
+                        <td>准备护照</td>
                     </tr>
                 </table>
             </div>
@@ -461,7 +575,7 @@
                 <div class="checklist-item">
                     <h3>衣物</h3>
                     <ul>
-                        <li>防寒服</li>
+                        <li>防服</li>
                         <li>保暖内衣</li>
                         <li>帽子手套围巾</li>
                         <li>防水外套</li>
@@ -486,12 +600,12 @@
                     <h3>电子设备</h3>
                     <ul>
                         <li>充电宝</li>
-                        <li>转换插头</li>
+                        <li>转插头</li>
                         <li>相机</li>
                     </ul>
                 </div>
                 <div class="checklist-item">
-                    <h3>他</h3>
+                    <h3>其他</h3>
                     <ul>
                         <li>暖宝宝</li>
                         <li>保温水壶</li>
@@ -527,7 +641,7 @@
             <h2>实用日语</h2>
             <div class="japanese-phrases">
                 <div class="phrase-card">
-                    <h3>電車</h3>
+                    <h3>電</h3>
                     <p>电车</p>
                     <p class="pronunciation">でんしゃ(densha)</p>
                 </div>
@@ -548,8 +662,14 @@
                 </div>
                 <div class="phrase-card">
                     <h3>すみません</h3>
-                    <p>不起</p>
+                    <p>对不起</p>
                     <p class="pronunciation">(sumimasen)</p>
+                </div>
+                <div class="phrase-card">
+                    <h3>いくらですか</h3>
+                    <p>这个多少钱</p>
+                    <p class="pronunciation">ikura desu ka</p>
+                    <button class="play-sound" data-audio="ikura-desu-ka">播放</button>
                 </div>
             </div>
         </section>

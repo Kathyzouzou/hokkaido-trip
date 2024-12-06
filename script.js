@@ -32,4 +32,15 @@ document.querySelectorAll('nav a').forEach(anchor => {
             behavior: 'smooth'
         });
     });
+});
+
+// 添加音频播放功能
+document.querySelectorAll('.play-sound').forEach(button => {
+    button.addEventListener('click', function() {
+        const audio = new Audio(`audio/${this.dataset.audio}.mp3`);
+        audio.play();
+        // 添加播放动画
+        this.classList.add('playing');
+        audio.onended = () => this.classList.remove('playing');
+    });
 }); 
